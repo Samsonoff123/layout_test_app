@@ -1,0 +1,548 @@
+<!doctype html>
+<html>
+   <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Getting Started</title>
+        <link rel='stylesheet' href='dist/style.css'>
+   </head>
+   
+   <body>
+
+    <header>
+        <div class="container" id="mobile_header">
+            <div class="header__main">
+                <div class="header__group">
+                    <div class="header__logo__geo">
+                        <div class="header__logo">
+                            <svg width="88" height="24" viewBox="0 0 88 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.851 17.4978H10.3601C10.1874 18.6703 9.66941 19.6114 8.80607 20.3213C7.95352 21.0313 6.86355 21.3862 5.53617 21.3862C3.7987 21.3862 2.43894 20.843 1.45689 19.7566C0.485629 18.6595 0 17.2128 0 15.4165C0 13.6202 0.491025 12.1788 1.47307 11.0924C2.45512 9.99529 3.80949 9.44672 5.53617 9.44672C6.7988 9.44672 7.851 9.77479 8.69276 10.4309C9.53451 11.0763 10.0525 11.9368 10.2468 13.0124H7.7215C7.45171 12.0659 6.72326 11.5926 5.53617 11.5926C4.54333 11.5926 3.78251 11.9529 3.25371 12.6736C2.73571 13.3835 2.47671 14.2978 2.47671 15.4165C2.47671 16.5351 2.73571 17.4548 3.25371 18.1755C3.78251 18.8854 4.54333 19.2403 5.53617 19.2403C6.1513 19.2403 6.65851 19.0897 7.05781 18.7886C7.46789 18.4766 7.73229 18.0464 7.851 17.4978Z" fill="#222222"/>
+                                <path d="M22.012 9.65647V11.7701H18.4184V21.1765H16.0064V11.7701H12.4127V9.65647H22.012Z" fill="#222222"/>
+                                <path d="M28.6894 14.8195H29.1427L31.587 9.65647H34.0313L28.4952 21.1765H26.0832L27.7343 17.7237L23.4608 9.65647H25.9861L28.6894 14.8195Z" fill="#222222"/>
+                                <path d="M45.1637 19.0306H46.8149V24H44.4677V21.1765H36.8757V24H34.5285V19.0306H35.7263C36.6436 17.4064 37.1023 15.126 37.1023 12.1896V9.65647H45.1637V19.0306ZM42.8165 19.0306V11.8024H39.3362V12.8188C39.3362 15.5079 38.9477 17.5785 38.1707 19.0306H42.8165Z" fill="#222222"/>
+                                <path d="M49.5559 9.65647H51.806V17.6914H52.2268L56.3871 9.65647H59.6408V21.1765H57.3745V12.964H56.9536L52.6963 21.1765H49.5559V9.65647Z" fill="#222222"/>
+                                <path d="M64.3366 21.1765V9.65647H66.7485V14.158H69.4843L71.6048 9.65647H74.0977L71.5077 15.2551L74.2434 21.1765H71.7505L69.5004 16.3361H66.7485V21.1765H64.3366Z" fill="#222222"/>
+                                <path d="M85.5557 21.1765L84.6168 18.0625H80.2137L79.2749 21.1765H76.8953L80.5699 9.65647H84.3092L88 21.1765H85.5557ZM82.0429 11.9637L80.8289 15.965H83.9693L82.7552 11.9637H82.0429Z" fill="#222222"/>
+                                <path d="M38.1583 0H35.629L32.5938 6.05042H35.1231L38.1583 0Z" fill="#222222"/>
+                            </svg>
+                        </div>
+
+                        <div class="header__geo" onclick="handleDropdownGeo(event)">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.55404 18.5638L21.9471 8.59494C22.4542 8.24375 23.0659 8.71826 22.8519 9.29672L16.7764 25.717C16.5704 26.2738 15.8135 26.323 15.6136 25.7927L13.6839 20.6718C13.607 20.4677 13.4267 20.3279 13.2099 20.3042L7.77002 19.7088C7.20659 19.6471 7.06601 18.9018 7.55404 18.5638Z" fill="#A7A7A7"/>
+                                <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="#A7A7A7"/>
+                            </svg>
+                            <span>Москва</span>  
+
+                            <div class="header__geo__dropdown" onclick="stop(event)">
+                                <div class="header__geo__dropdown__input">
+                                    <input type="text" placeholder="Регион, город, населенный пункт" oninput="handleGeoSearch(this)" >
+                                    <div onclick="clearInput(this)">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#A7A7A7"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="header__geo__dropdown__tag">
+                                    <div class="header__geo__dropdown__tag__element">
+                                        <span>Москвавв</span>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#A7A7A7"/>
+                                        </svg>
+                                            
+                                    </div>
+                                </div>
+                                <div class="header__geo__dropdown__ul">
+                                    <div class="spinner rounded-circle">
+                                    </div>
+                                </div>
+                                <button onclick="sendGeo(event)">сохранить</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="header__search">
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.7 7.64999C1.7 4.3639 4.36391 1.7 7.65001 1.7C10.9361 1.7 13.6 4.3639 13.6 7.64999C13.6 9.25281 12.9662 10.7076 11.9356 11.7774C11.9063 11.7999 11.8781 11.8246 11.8513 11.8515C11.8245 11.8783 11.7998 11.9065 11.7773 11.9358C10.7075 12.9663 9.25274 13.6 7.65001 13.6C4.36391 13.6 1.7 10.9361 1.7 7.64999ZM12.4249 13.6272C11.1162 14.674 9.45622 15.3 7.65001 15.3C3.42502 15.3 0 11.875 0 7.64999C0 3.42502 3.42502 0 7.65001 0C11.875 0 15.3 3.42502 15.3 7.64999C15.3 9.4563 14.674 11.1164 13.627 12.4251L16.7509 15.549C17.0828 15.8809 17.0828 16.4191 16.7509 16.751C16.4189 17.083 15.8807 17.083 15.5488 16.751L12.4249 13.6272Z" fill="#A7A7A7"/>
+                        </svg>
+                        <input type="text" placeholder="Учебное заведение, специальность или профессия" oninput="handleInput(this)">
+                        <div class="header__search__dropdown" onclick="stop(event)">
+                            <span class="category">популярное:</span>
+                            <a href="#" class="header__search__dropdown__element">
+                                <span class="title">МГУ — Московский государственный университет имени М.В. Ломоносова  </span>
+                                <span class="small">Вуз</span>
+                            </a>
+                            <a href="#" class="header__search__dropdown__element">
+                                <span class="title">Прикладная математика и информатика</span>
+                                <span class="small">Специальность</span>
+                            </a>
+                            <a href="#" class="header__search__dropdown__element">
+                                <span class="title">Институт бизнеса и маркетинга  </span>
+                                <span class="small">Учебное заведение</span>
+                            </a>
+                            <a href="#" class="header__search__dropdown__element">
+                                <span class="title">Российская академия народного хозяйства и государственной службы при Президенте Российской Федерации </span>
+                                <span class="small">Учебное заведение</span>
+                            </a>
+                            <a href="#" class="header__search__dropdown__element">
+                                <span class="title">МГУ — Московский государственный университет имени М.В. Ломоносова  </span>
+                                <span class="small">Вуз</span>
+                            </a>
+                            <a href="#" class="header__search__dropdown__element">
+                                <span class="title">Прикладная математика и информатика</span>
+                                <span class="small">Специальность</span>
+                            </a>
+                            <a href="#" class="header__search__dropdown__element">
+                                <span class="title">Институт бизнеса и маркетинга  </span>
+                                <span class="small">Учебное заведение</span>
+                            </a>
+                            <a href="#" class="header__search__dropdown__element">
+                                <span class="title">Российская академия народного хозяйства и государственной службы при Президенте Российской Федерации </span>
+                                <span class="small">Учебное заведение</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="header_raiting">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 14.0125L6.4125 13.0225C2.55 9.52 0 7.21 0 4.375C0 2.065 1.815 0.25 4.125 0.25C5.43 0.25 6.6825 0.8575 7.5 1.8175C8.3175 0.8575 9.57 0.25 10.875 0.25C13.185 0.25 15 2.065 15 4.375C15 7.21 12.45 9.52 8.5875 13.03L7.5 14.0125Z" fill="#A7A7A7"/>
+                        </svg>
+                        <span>1</span>
+                    </div>
+
+                    <div class="header__profile">
+                        <span>Екатерина</span>
+                        <img src="../src/image/avatar(1).png" alt="profile_avatar">
+                    </div>
+
+            </div>  
+            <div class="header__categories" id="header__categories">
+                <div class="header__categories__element active">
+                    <a href="#">
+                        Вузы
+                    </a>
+                </div>
+                <div class="header__categories__element">
+                    <a href="#">
+                        Колледжи
+                    </a>
+                </div>
+                <div class="header__categories__element">
+                    <a href="#">
+                        Техникумы
+                    </a>
+                </div>
+                <div class="header__categories__element">
+                    <a href="#">
+                        Училища
+                    </a>
+                </div>
+                <div class="header__categories__element">
+                    <a href="#">
+                        Специальности
+                    </a>
+                </div>
+                <div class="header__categories__element">
+                    <a href="#">
+                        Профессии
+                    </a>
+                </div>
+                <div class="header__categories__element">
+                    <a href="#">
+                        Отзывы
+                    </a>
+                </div>
+                <div class="header__categories__element">
+                    <a href="#">
+                        Учебным заведениям
+                    </a>
+                </div>
+                <div class="header__categories__element">
+                    <a href="#">
+                        Тест на профориентацию
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__mobile">
+            <div class="burger" onclick = "handleBurger(this)">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="header__logo">
+                <svg width="88" height="24" viewBox="0 0 88 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.851 17.4978H10.3601C10.1874 18.6703 9.66941 19.6114 8.80607 20.3213C7.95352 21.0313 6.86355 21.3862 5.53617 21.3862C3.7987 21.3862 2.43894 20.843 1.45689 19.7566C0.485629 18.6595 0 17.2128 0 15.4165C0 13.6202 0.491025 12.1788 1.47307 11.0924C2.45512 9.99529 3.80949 9.44672 5.53617 9.44672C6.7988 9.44672 7.851 9.77479 8.69276 10.4309C9.53451 11.0763 10.0525 11.9368 10.2468 13.0124H7.7215C7.45171 12.0659 6.72326 11.5926 5.53617 11.5926C4.54333 11.5926 3.78251 11.9529 3.25371 12.6736C2.73571 13.3835 2.47671 14.2978 2.47671 15.4165C2.47671 16.5351 2.73571 17.4548 3.25371 18.1755C3.78251 18.8854 4.54333 19.2403 5.53617 19.2403C6.1513 19.2403 6.65851 19.0897 7.05781 18.7886C7.46789 18.4766 7.73229 18.0464 7.851 17.4978Z" fill="#222222"/>
+                    <path d="M22.012 9.65647V11.7701H18.4184V21.1765H16.0064V11.7701H12.4127V9.65647H22.012Z" fill="#222222"/>
+                    <path d="M28.6894 14.8195H29.1427L31.587 9.65647H34.0313L28.4952 21.1765H26.0832L27.7343 17.7237L23.4608 9.65647H25.9861L28.6894 14.8195Z" fill="#222222"/>
+                    <path d="M45.1637 19.0306H46.8149V24H44.4677V21.1765H36.8757V24H34.5285V19.0306H35.7263C36.6436 17.4064 37.1023 15.126 37.1023 12.1896V9.65647H45.1637V19.0306ZM42.8165 19.0306V11.8024H39.3362V12.8188C39.3362 15.5079 38.9477 17.5785 38.1707 19.0306H42.8165Z" fill="#222222"/>
+                    <path d="M49.5559 9.65647H51.806V17.6914H52.2268L56.3871 9.65647H59.6408V21.1765H57.3745V12.964H56.9536L52.6963 21.1765H49.5559V9.65647Z" fill="#222222"/>
+                    <path d="M64.3366 21.1765V9.65647H66.7485V14.158H69.4843L71.6048 9.65647H74.0977L71.5077 15.2551L74.2434 21.1765H71.7505L69.5004 16.3361H66.7485V21.1765H64.3366Z" fill="#222222"/>
+                    <path d="M85.5557 21.1765L84.6168 18.0625H80.2137L79.2749 21.1765H76.8953L80.5699 9.65647H84.3092L88 21.1765H85.5557ZM82.0429 11.9637L80.8289 15.965H83.9693L82.7552 11.9637H82.0429Z" fill="#222222"/>
+                    <path d="M38.1583 0H35.629L32.5938 6.05042H35.1231L38.1583 0Z" fill="#222222"/>
+                </svg>
+            </div>
+            <div class="header_raiting">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 14.0125L6.4125 13.0225C2.55 9.52 0 7.21 0 4.375C0 2.065 1.815 0.25 4.125 0.25C5.43 0.25 6.6825 0.8575 7.5 1.8175C8.3175 0.8575 9.57 0.25 10.875 0.25C13.185 0.25 15 2.065 15 4.375C15 7.21 12.45 9.52 8.5875 13.03L7.5 14.0125Z" fill="#A7A7A7"/>
+                </svg>
+                <span>1</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner">
+            <div class="container">
+                <div class="bread_crumbs">
+                    <a class="bread_crumbs__element _back" href="#">НАзад</a>
+                    <a class="bread_crumbs__element" href="#">Москва</a>
+                    <a class="bread_crumbs__element" href="#">Высшее образование</a>
+                    <a class="bread_crumbs__element" href="#">Вузы</a>
+                    <span class="bread_crumbs__element">МГТУ им. Н.Э. Баумана</span>
+                </div>
+                <div class="banner__main">
+                    <div class="banner__main__image">
+                        <div class="button__group">
+                            <button class="_blue">оставить отзыв</button>
+                            <button>проверить шансы поступить</button>
+                        </div>
+                        <img class="banner__main__image__logo" src="../src/image/banner-logo.png" alt="banner__logo">
+                        <img class="banner__main__image__bg" src="../src/image/banner.png" alt="main__banner">
+                    </div>
+                    <div class="banner__main__description">
+                        <div class="banner__main__description__name">
+                            <h3>Московский государственный технический 
+                                университет имени Н.Э. Бáумана
+                            </h3>
+                            <div class="banner__main__description__name__events">
+                                <div class="banner__main__description__name__events__favorite">
+                                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 14.0125L6.9125 13.0225C3.05 9.52 0.5 7.21 0.5 4.375C0.5 2.065 2.315 0.25 4.625 0.25C5.93 0.25 7.1825 0.8575 8 1.8175C8.8175 0.8575 10.07 0.25 11.375 0.25C13.685 0.25 15.5 2.065 15.5 4.375C15.5 7.21 12.95 9.52 9.0875 13.03L8 14.0125Z" fill="#A7A7A7"/>
+                                    </svg>
+                                    <span>В Избранное</span>
+                                </div>
+                                <div class="banner__main__description__name__events__bell">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="20" cy="20" r="20" fill="white"/>
+                                        <path d="M26 15C26 13.4087 25.3679 11.8826 24.2426 10.7574C23.1174 9.63214 21.5913 9 20 9C18.4087 9 16.8826 9.63214 15.7574 10.7574C14.6321 11.8826 14 13.4087 14 15C14 22 11 24 11 24H29C29 24 26 22 26 15Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M21.73 28C21.5542 28.3031 21.3019 28.5547 20.9982 28.7295C20.6946 28.9044 20.3504 28.9965 20 28.9965C19.6496 28.9965 19.3054 28.9044 19.0018 28.7295C18.6982 28.5547 18.4458 28.3031 18.27 28" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>    
+                                </div>
+                                <div class="banner__main__description__name__events__share">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="20" cy="20" r="20" fill="white"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.7254 13.1429V21H19.2417V13.1429L17.0162 15.5L16 14.4842L19.9835 10L24 14.4842L22.9509 15.5L20.7254 13.1429ZM11 18V26V27H12H28H29V26V18H27V25H13V18H11Z" fill="#A7A7A7"/>
+                                    </svg>
+                                        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner__main__description__additional__info">
+                            <div class="banner__main__description__additional__info__raiting">
+                                <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 11.9525L12.635 14.75L11.405 9.4775L15.5 5.93L10.1075 5.4725L8 0.5L5.8925 5.4725L0.5 5.93L4.595 9.4775L3.365 14.75L8 11.9525Z" fill="#EFD967"/>
+                                </svg>
+                                <span><span class="_black">2.4 </span>(75 отзывов)</span>
+                            </div>
+
+                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="6" height="6" rx="3" fill="#767676"/>
+                            </svg>
+                                
+                            <span>Москва, ул. Новочеремушкинская, д. 69</span>
+
+                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="6" height="6" rx="3" fill="#767676"/>
+                            </svg>
+
+                            <span>Приемная комиссия: 7 (499) 181 21 33</span>
+                        </div>
+                        <div class="banner__main__description__update">
+                            <span>Обновлено 11.11.2011</span>
+                            <a href="#">Сообщить об ошибке</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="basic__information">
+            <div class="container">
+                <div class="basic__information__main">
+                    <div class="basic__information__main__categories">
+                        <div class="basic__information__main__categories__element">
+                            <span>Основная информация</span>
+                            <div>100</div>
+                        </div>
+                        <div class="basic__information__main__categories__element">
+                            <span>Специальности</span>
+                            <div>100</div>
+                        </div>
+                        <div class="basic__information__main__categories__element">
+                            <span>Об университете</span>
+                            <div>100</div>
+                        </div>
+                        <div class="basic__information__main__categories__element">
+                            <span>Контакты</span>
+                            <div>100</div>
+                        </div>
+                    </div>
+
+                    <div class="basic__information__main__description">
+                        <h3>Основная информация</h3>
+                        <div class="basic__information__main__description__flex">
+                            <div class="basic__information__main__description__flex__element">
+                                <div class="basic__information__main__description__flex__element__el">
+                                    <div class="_blue">4 532</div>
+                                    <span>платных мест</span>
+                                </div>
+                                <div class="basic__information__main__description__flex__element__el">
+                                    <div class="_blue">1 702</div>
+                                    <span>бюджетных мест</span>
+                                </div>
+                            </div>
+                            <div class="basic__information__main__description__flex__element">
+                                <div class="basic__information__main__description__flex__element__el">
+                                    <div>1 место</div>
+                                    <span>в Санкт-Петербурге</span>
+                                </div>
+                                <div class="basic__information__main__description__flex__element__el">
+                                    <div>12 место</div>
+                                    <span>в РФ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basic__information__main__description__flex">
+                            <div class="basic__information__main__description__flex__element">
+                                <div class="basic__information__main__description__flex__element__el">
+                                    <div>1 место</div>
+                                    <span>в Санкт-Петербурге</span>
+                                </div>
+                                <div class="basic__information__main__description__flex__element__el">
+                                    <div>12 место</div>
+                                    <span>в РФ</span>
+                                </div>
+                                <div class="basic__information__main__description__flex__element__el">
+                                    <div>12 место</div>
+                                    <span>в РФ</span>
+                                </div>
+                            </div>
+                            <div class="basic__information__main__description__flex__element">
+                                <div class="basic__information__main__description__flex__element__el">
+                                    <div>12 место</div>
+                                    <span>в РФ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+      <script src="dist/bundle.js"></script>
+
+      <script>
+
+            const handleBurger = ($burger) => {
+                const $headerMenu = document.getElementById('mobile_header')
+
+                $burger.classList.toggle('_active')
+                $headerMenu.classList.toggle('_active')
+            }
+
+            const handleInput = ($input) => {
+
+                if ($input.value !== '') {
+                    $input.parentElement.querySelector('.header__search__dropdown').classList.add('_active')
+                } else {
+                    $input.parentElement.querySelector('.header__search__dropdown').classList.remove('_active')
+                }
+            }
+
+            const clearInput = ($xbutton) => {
+                $xbutton.parentElement.querySelector('input').value = ''
+                drawGeoArray(geoData)
+            }
+
+            let isFirstLoad = true
+
+            const handleDropdownGeo = (e) => {
+                e.stopPropagation()
+                
+                const $searchDropdown = document.querySelector('.header__search__dropdown')
+                $searchDropdown.classList.remove('_active')
+
+                const $dropdown = document.querySelector('.header__geo__dropdown')
+                $dropdown?.classList.add('_active')
+
+                if (isFirstLoad) {
+                    drawData()
+
+                    isFirstLoad = false
+                }
+            }
+
+            const stop = (e) => {
+                e.stopPropagation()
+            }
+
+            const getData = async () => {
+                try {
+                    const res = await fetch('https://studika.ru/api/areas', {
+                        method: 'POST',
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json',
+                        }
+                    })
+                    const data = await res.json()
+
+                    return data
+
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+
+            const geoData = []
+
+            const drawData = () => {
+                const $spinner = document.querySelector('.spinner.rounded-circle')
+
+                getData().then((res) => {
+                    const data = res.slice(0, 5) // с большим массивом приходит большие лаги
+                    $spinner.style.display = "none"
+                    geoData.push(...data)
+                    drawGeoArray(data)
+                })
+            }
+
+            const drawGeoArray = (res) => {
+                const $geoDropdownUl = document.querySelector('.header__geo__dropdown__ul')
+                $geoDropdownUl.innerHTML = ''
+
+                res.forEach(country => {
+                    $geoDropdownUl.innerHTML += `<li onclick="addToTag('${country.name}')">${country.name}</li>`
+                    if (country.cities) {
+                        country.cities.forEach(city => {
+                            $geoDropdownUl.innerHTML += `<li onclick="addToTag('${city.name}')">${city.name}</li>`
+                        })
+                    }
+                });
+            }
+
+            let tags = []
+
+            const addToTag = (name) => {
+                const $tagMain = document.querySelector('.header__geo__dropdown__tag')
+                let isSame = false
+                
+                tags.forEach((tag, index) => { 
+                    if (tag === name) {
+                        isSame = true
+                    }
+                })
+
+                if(!isSame) {
+                    $tagMain.innerHTML += `
+                    <div data-name="${name}" class="header__geo__dropdown__tag__element">
+                        <span>${name}</span>
+                        <div onclick="removeTag(this)">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#A7A7A7"/>
+                            </svg>
+                        </div>
+                    </div>`
+                    tags.push(name)
+                } else {
+                    document.querySelector(`.header__geo__dropdown__tag__element[data-name = "${name}"]`).remove()
+                    let tempTags = [...tags]
+                    tags = []
+                    tempTags.forEach(tag => {
+                        if (tag !== name) {
+                            tags.push(tag)
+                        }
+                    })
+                }
+            }
+
+            const removeTag = ($tag) => {
+                const tagName = $tag.parentElement.querySelector('span').innerText
+
+                document.querySelector(`.header__geo__dropdown__tag__element[data-name = "${tagName}"]`).remove()
+
+                let tempTags = [...tags]
+                tags = []
+
+                tempTags.forEach(tag => {
+                    if(tag !== tagName) {
+                        tags.push(tag)
+                    }
+                })
+            }
+
+            const handleGeoSearch = ($input) => {
+                const push = []
+                const inputValue = $input.value
+
+                setTimeout(() => {
+                
+                    geoData.forEach(e => {
+                        const searchName = e.name
+
+                        if(searchName.toLowerCase().includes(inputValue.toLowerCase())) {
+                            push.push({name: e.name})
+                        }
+
+                        if(e.cities) {
+                            e.cities.forEach(city => {
+                                const searchName = city.name
+
+                                if(searchName.toLowerCase().includes(inputValue.toLowerCase())) {
+                                    push.push({name: city.name})
+                                }
+                            })
+                        }
+                    })
+
+                    if (push.length === 0) {
+                        push.push({name: 'нет результата'})
+                    }
+
+                    drawGeoArray(push)
+
+                }, 200);
+
+            }
+
+            const sendGeo = async (e) => {
+                e.stopPropagation()
+                try {
+                    const res = await fetch('#', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    },
+                    {
+                        tags
+                    })
+
+                    const data = await res.json()
+                    console.log('sucsess: ', data);
+                } catch (error) {
+                    console.log(error);
+                }
+
+            }
+
+
+
+      </script>
+   </body>
+</html>

@@ -1,0 +1,256 @@
+.banner__main {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 6px rgba(44, 62, 106, 0.08);
+    width: 100%;
+    border-radius: 10px;
+
+    .banner__main__image {
+        height: 350px;
+        position: relative;
+        background: transparent;
+    }
+
+    
+    @media (max-width: 768px) {
+        position: relative;
+
+        .banner__main__image {
+            position: static;
+            height: 122px;
+            
+
+            .banner__main__image__bg {
+                height: 122px;
+            }
+        }
+    }
+
+    .banner__main__image__logo {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+        background: #FFFFFF;
+        box-shadow: 0px 5px 6px rgba(44, 62, 106, 0.08);
+        border-radius: 10px;
+        z-index: 1;
+
+        @media (max-width: 768px) {
+            top: 8px;
+            left: 8px;
+        }
+    }
+
+    .banner__main__image__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 10px 0 0;
+        z-index: 0;
+    }
+
+    .button__group {
+        position: absolute;
+        bottom: 24px;
+        right: 16px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @media (max-width: 768px) {
+            bottom: 16px;
+            flex-direction: column;
+            width: calc(100% - 32px);
+
+            button {
+                width: 100%;
+
+                background: #dfe9f5;
+                color: #0656b4;
+                
+                &:nth-child(1) {
+                    display: none;
+                }
+            }
+        }
+
+        button {
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+            margin-left: auto;
+        }
+    }
+
+    .banner__main__description {
+        padding: 24px;
+        background-color: #FFFFFF;
+
+        @media (max-width: 768px) {
+            padding: 16px;
+        }
+
+        .banner__main__description__name {
+            display: flex;
+            justify-content: space-between;
+
+            h3 {
+                max-width: 890px;
+                margin: 0;
+                margin-bottom: 6px;
+            }
+
+            @media (max-width: 768px) {
+                flex-direction: column-reverse;
+                margin-top: -70px;
+                position: relative;
+                z-index: 3;
+
+                h3 {
+                    margin-bottom: 0;
+                    margin-top: 1em;
+                }
+            }
+
+            .banner__main__description__name__events {
+                display: flex;
+                align-items: flex-start;
+                gap: 5px;
+
+                @media (max-width: 768px) {
+                    margin-right: -8px;
+                    margin-left: auto;
+                
+                    .banner__main__description__name__events__share {
+                        order: 1;
+                    }
+
+                    .banner__main__description__name__events__favorite {
+                        order: 2;
+                        width: 40px;
+                        height: 40px;
+                        justify-content: center;
+                        span {
+                            display: none;
+                        }
+                    }
+
+                    .banner__main__description__name__events__bell {
+                        display: none;
+                    }
+                }
+
+                .banner__main__description__name__events__favorite {
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    padding: 9px;
+                    border: 1px solid #D8D8D8;
+                    border-radius: 49px;
+                    background-color: #FFFFFF;
+
+                    span {
+                        white-space: nowrap;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 22px;
+                        color: $baseColor;
+                    }
+                }
+
+                .banner__main__description__name__events__bell {
+                    cursor: pointer;
+                }
+
+                .banner__main__description__name__events__share {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .banner__main__description__additional__info {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 6px;
+            margin-bottom: 16px;
+
+            .banner__main__description__additional__info__raiting {
+                display: flex;
+                gap: 4px;
+                align-items: center;
+            }
+
+            span {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 20px;
+                color: #767676;
+
+                &._black {
+                    font-weight: 500;
+                    color: $baseColor;
+                }
+            }
+        }
+
+        .banner__main__description__update {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: flex-end;
+
+            span {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 20px;
+                color: #767676;
+            }
+
+            a {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 20px;
+                color: #0656B4;
+                text-decoration: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner__main__description__additional__info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+                margin-top: 16px;
+                padding-bottom: 25px;
+
+                svg:not(:nth-child(1)) {
+                    display: none;
+                }
+                .banner__main__description__additional__info__raiting {
+                    order: 3;
+                }
+            }
+
+            .banner__main__description__update {
+                transform: translateY(55px);
+            }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .banner .container {
+        padding: 0;
+    }
+}
